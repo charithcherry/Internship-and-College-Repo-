@@ -26,6 +26,10 @@ void main()
     printf("4.reverse\n");
     printf("5.reverse k nodes\n");
     printf("6.exit\n");
+    printf("7.length\n");
+    printf("8.insert after key\n");
+    printf("9.insert before key\n");
+    printf("10.delete data \n");
     printf("enter the option\n");
     scanf("%d",&c);
     switch(c)
@@ -48,7 +52,18 @@ void main()
         break;
         case 6:
         exit(0);
+        case 7:
+            length();
         break;
+        case 8:
+            insertf();
+        break;
+        case 9:
+            insertb();
+            break;
+        case 10:
+            deleteinfo();
+            break;
         default:
         printf("invalid");
         }}}
@@ -131,17 +146,25 @@ void display()
 
     int length()
     {
-        int c=0;
+        int c=1;
         struct node *temp;
+        if(root==null)
+        {
+
+            printf("empty");
+
+        }
+        else{
         temp=root;
         while(temp->link!=null)
     {
-    c++;
+c++;
         temp=temp->link;
 
     }
+    printf("%d\n",c);
     return c;
-    }
+    }}
      struct node reverse(struct node *p)
     {
         if(p->link==null)
@@ -190,4 +213,144 @@ void display()
 
         }
     }
+void insertf()
+{
+
+    int loc,count,c,d;
+    struct node *cur,*prev;
+    printf("enter location\n");
+    scanf("%d",&loc);
+    count=length();
+    struct node *temp;
+
+    if(loc>count || loc<=0 || root==null)
+    {
+
+        printf("not possible\n");
+
+    }
+    else{
+        temp=(struct node *)malloc(sizeof(struct node));
+        printf("enter data\n");
+        scanf("%d",&temp->data);
+        temp->link=null;
+        c=1;
+
+        cur=root;
+        while(c<loc+1)
+        {
+
+            prev=cur;
+            cur=cur->link;
+            c++;
+
+        }
+
+        prev->link=temp;
+        temp->link=cur;
+
+    }
+}
+ void insertb()
+ {  int loc,count,c,d;
+    struct node *cur,*prev;
+    printf("enter location\n");
+    scanf("%d",&loc);
+    count=length();
+    struct node *temp;
+
+    if(loc>count || loc<=0 || root==null)
+    {
+
+        printf("not possible\n");
+
+    }
+    else{
+        temp=(struct node *)malloc(sizeof(struct node));
+        printf("enter data\n");
+        scanf("%d",&temp->data);
+        temp->link=null;
+        c=1;
+
+        cur=root;
+        if(loc==1)
+        {
+          printf("not possible\n") ;
+
+        }
+        else{
+        if(loc-1==1)
+            {
+              temp->link=root;
+              root=temp;
+
+            }
+            else{
+        while(c<=loc-2)
+        {
+
+            prev=cur;
+            cur=cur->link;
+            c++;
+
+        }
+
+        prev->link=temp;
+        temp->link=cur;
+
+
+            }
+      }
+ }
+ }
+ void deleteinfo()
+ {
+
+     int d;
+     struct node *cur,*prev,*t;
+     cur=root;
+
+
+if(root==null)
+{
+
+    printf("not possible\n");}
+    else{
+            printf("enter data to be removed\n");
+     scanf("%d",&d);
+
+      if(cur->data==d)
+      {
+        root=root->link;
+        free(cur);
+        cur=null;
+      }
+else{
+            while(cur!=null)
+     {
+
+         if(d==cur->data)
+         { break;
+
+        }
+        prev=cur;
+         cur=cur->link;
+
+     }
+
+   if(cur==null)
+   {
+
+       printf("not found\n");
+
+   }
+
+else{
+        prev->link=cur->link;
+       free(cur);
+       cur=null;
+
+}
+}
+ }}
 
