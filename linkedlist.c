@@ -30,6 +30,8 @@ void main()
     printf("8.insert after key\n");
     printf("9.insert before key\n");
     printf("10.delete data \n");
+    printf("11.insert after key element\n");
+    printf("12.insert before key element\n");
     printf("enter the option\n");
     scanf("%d",&c);
     switch(c)
@@ -63,6 +65,12 @@ void main()
             break;
         case 10:
             deleteinfo();
+            break;
+        case 11:
+            insertae();
+            break;
+        case 12:
+            insertbe();
             break;
         default:
         printf("invalid");
@@ -353,4 +361,117 @@ else{
 }
 }
  }}
+ void insertae()
+ {
+     int k,d;
+     struct node *temp,*prev,*cur;
+     cur=root;
+     printf("enter key element\n");
+     scanf("%d",&k);
+     printf("enter element to be inserted\n");
+     scanf("%d",&d);
+
+     if(root==null)
+     {
+
+         printf("empty\n");
+
+     }
+     else if(root->link==null)
+     {
+
+         if(root->data==k)
+         {   temp=(struct node *)malloc(sizeof(struct node));
+         temp->data=d;
+         temp->link=null;
+             root->link=temp;
+
+
+         }
+         else{
+            printf("key not found\n");
+
+         }
+     }
+     else{
+        while(cur!=null)
+        {
+            if(cur->data==k)
+                break;
+            cur=cur->link;
+
+        }
+        if(cur==null)
+        {
+
+            printf("key not found\n");}
+        else
+                {
+
+        temp=(struct node *)malloc(sizeof(struct node));
+         temp->data=d;
+         temp->link=null;
+         temp->link=cur->link;
+         cur->link=temp;
+            }
+        }
+
+    }
+
+void insertbe()
+ {
+     int k,d;
+     struct node *temp,*prev,*cur;
+     cur=root;
+     printf("enter key element\n");
+     scanf("%d",&k);
+
+
+     if(root==null)
+     {
+
+         printf("empty\n");
+
+     }
+     else if(root->data==k)
+     {
+         printf("enter element to be inserted\n");
+     scanf("%d",&d);
+
+            temp=(struct node *)malloc(sizeof(struct node));
+         temp->data=d;
+         temp->link=null;
+             temp->link=root;
+             root=temp;
+
+     }
+     else{
+
+
+        while(cur!=null)
+        {
+            if(cur->data==k)
+                break;
+            prev=cur;
+            cur=cur->link;
+
+        }
+        if(cur==null)
+        {
+
+            printf("key not found\n");}
+        else
+                {
+         printf("enter element to be inserted\n");
+     scanf("%d",&d);
+        temp=(struct node *)malloc(sizeof(struct node));
+         temp->data=d;
+         temp->link=null;
+         prev->link=temp;
+    temp->link=cur;
+            }
+        }
+
+    }
+
 
