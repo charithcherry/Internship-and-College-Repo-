@@ -98,8 +98,7 @@ printf("%d",t->data);
 
  while(poly1->link && poly2->link)
     {
-        // If power of 1st polynomial is greater then 2nd, then store 1st as it is
-        // and move its pointer
+
         if(poly1->pow > poly2->pow)
         {
             poly->pow = poly1->pow;
