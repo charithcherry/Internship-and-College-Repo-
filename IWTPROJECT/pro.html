@@ -1,0 +1,197 @@
+<html>
+    <head> <title> NEEM products </title>
+      <link rel="stylesheet" type="text/css" href="te.css"/>  
+  <script type="text/javascript">
+  
+  function bill() {
+  
+  var bill = 0;
+  var  sel = document.IC.ice;
+  
+  for (index = 0; index < sel.length; index++)
+       { 
+           if (sel[index].checked) 
+       bill = bill + parseInt(sel[index].value); }
+            
+          
+   document.IC.amt.value = bill;
+  
+      }
+  
+  </script>
+  <style type="text/css">
+  .m{
+
+margin-left: 350px
+
+  }
+  .c{
+    margin-left: 350px;
+    height: 5%;
+    width: 7%;  
+    padding: 12px;
+    font-size: 20px;
+  }
+  
+
+  .v{        height: 5%;
+                    width: 40%;
+                    color:black;
+                    border:black;
+                    border-style: ridge;
+                    border-radius: 4px;
+                    align-content: center;
+                    margin-left: 75px;
+                
+          
+         }
+         .d{
+             height: 5%;
+             width:20%;
+             border-style: ridge;
+             border-color: black;
+                    border-radius: 4px;
+                    align-content: space-between;
+                    font-weight: 100px;
+                  }
+    .j{
+                background-image: url("neembackground.jpg");
+                background-size: cover;
+
+                    }
+  
+                    ul {
+  list-style-type: none;
+}
+
+li {
+  display: inline-block;
+}
+
+input[type="checkbox"][id^="cb"] {
+  display: none;
+}
+
+label {
+  border: 1px solid #fff;
+  padding: 10px;
+  display: block;
+  position: relative;
+  margin: 10px;
+  cursor: pointer;
+}
+
+label:before {
+  background-color: white;
+  color: white;
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  border: 1px solid grey;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 28px;
+  transition-duration: 0.4s;
+  transform: scale(0);
+}
+
+label img {
+  height: 200px;
+  width: 200px;
+  transition-duration: 0.2s;
+  transform-origin: 50% 50%;
+}
+
+:checked + label {
+  border-color: #ddd;
+}
+
+:checked + label:before {
+  content: "✓";
+  background-color: grey;
+  transform: scale(1);
+}
+
+:checked + label img {
+  transform: scale(0.9);
+  box-shadow: 0 0 5px #333;
+  z-index: -1;
+}
+.reduce{
+  
+  
+
+
+ margin-left: -100px;
+}
+.reduce1{
+  
+
+
+margin-left: -50px;
+}
+    
+.reduce2{
+  
+margin-left: 0px;
+}
+    
+                    
+  </style>
+  
+  </head>
+  
+    <body class="j">
+
+        <hr>
+        <h2 onmouseover="style.color='blue';" onmouseout="style.color='black';"><center>NEEM products</center></h2>
+  <hr>
+  <div id="navbar">
+    <a href="project.html"><h5>HOME</h5></a>
+    <a href="PRODUCTS.html"><h5>PRODUCTS TYPE</h5></a>
+    </div>
+    <hr>
+<br>
+  <br>
+
+      <form name="IC" method = "post" class="m" >
+ 
+  
+  
+  
+    
+    <ul>
+      
+      <li><input type="checkbox" id="cb2" value="150" class="reduce" name="ice"/>
+        <label for="cb2"><img src="neemoil.jpg" /></label>
+      </li>
+      <li><input type="checkbox" id="cb3" value="225" class="reduce1" name="ice"/>
+        <label for="cb3"><img src="neemsoap.jpg" /></label>
+      </li>
+      <li><input type="checkbox" id="cb4" value="250" class="reduce2" name="ice"/>
+        <label for="cb4"><img src="neemfacewash.jpg" /></label>
+      </li>
+    </ul>
+  
+  
+
+    <br>
+    <br>
+    <p>
+      <input type = "button"  value = "Submit Order" onclick="bill()" class="v"/> 
+      <input type = "reset"  value = "Clear Order Form"  class="d"/>
+    
+
+    </p> 
+  <br>
+      
+        
+        <input type="text" name="amt"      readonly="readonly" class="c" />
+      
+      </form>
+    </body>
+  </html>

@@ -1,0 +1,48 @@
+.slide-container{
+    width: 1000px;
+    height:700px;
+    margin-left:auto;
+    margin-right: auto;
+    overflow: hidden;
+    text-align: center;
+
+}
+.image-container{
+
+width: 3010px;
+height: 700px;
+position: relative;
+transition: left 2s;
+-webkit-transition: left 2s;
+-moz-transition: left 2s;
+-o-transition: left 2s;
+
+}
+.slider-image{
+
+float: left;
+margin: 0px;
+padding: 0px;
+
+}
+.button-container{
+    top:-100px;
+    position: relative;
+}
+.slider-button{
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    background-color: black;
+
+}
+#slider-image-1:target ~.image-container{
+    left: 0px;
+}
+#slider-image-2:target ~.image-container{
+    left: -1000px;
+}
+#slider-image-3:target ~.image-container{
+    left: -2000px;
+}

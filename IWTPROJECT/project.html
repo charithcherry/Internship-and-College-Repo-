@@ -1,0 +1,153 @@
+<html>
+    <head><title>AYURVEDA PRODUCTS</title>
+        <link rel="stylesheet" type="text/css" href="te.css"/>
+
+        <script type="text/javascript">
+        function tranfer()
+        {  var x=document.f.product.value;
+        
+        if(x==="neem")
+  {   
+      window.open("c:\\Users\\chaku\\Desktop\\IWTPROJECT\\pro.html");
+      
+  }
+  else if(x==="tulsi")
+  {   
+      window.open("c:\\Users\\chaku\\Desktop\\IWTPROJECT\\pro1.html");
+      
+  }
+  else if(x==="aloe vera")
+  {
+
+    
+      window.open("c:\\Users\\chaku\\Desktop\\IWTPROJECT\\pro2.html");
+      
+  
+  }
+  else{
+
+      alert('resource not found');
+  }
+        }
+
+
+
+        function lowlight(e) {
+            e.style.background = "silver";
+         }
+ function highlight(e) {
+            e.style.background = "yellow";
+         }
+         window.onscroll = function() {myFunction()};
+
+
+var navbar = document.getElementById("navbar");
+
+
+var sticky = navbar.offsetTop;
+
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+
+
+
+        
+        </script>
+        <style type="text/css">
+        .a{
+            background-image: url("ayur16.jpg");
+            background-size: cover;
+
+        }
+        .b{
+
+            margin-left: 300px;
+        }
+        .b1{
+
+
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+color: black;
+font-size: 200%;
+
+
+background-size:cover;
+
+
+
+}
+
+         .c{        height: 5%;
+                    width: 40%;
+                    color:black;
+                    border:black;
+                    border-style: ridge;
+                    border-radius: 4px;
+                    align-content: center;
+                
+          
+         }
+         .d{
+             height: 5%;
+             width:20%;
+             border-style: ridge;
+                    border-radius: 4px;
+                    align-content: space-between;
+                    font-weight: 100px;
+                    
+
+         }
+        h6{
+
+            text-shadow: 10px 10px 10px black;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        h1{
+
+text-shadow: 5px  5px 10px green;
+}
+             
+    img{
+        float: right;
+    }         
+
+
+      a:hover{
+          background-color:greenyellow;
+      }  
+      a:active{
+          background-color: blue;
+      } 
+        
+        </style>
+
+    </head>
+    
+    <body  class="a">
+        
+        <hr>
+        <p><center><b><h1>AYURVEDA ONLINE SHOPPING MART</h1></b></center></p>
+        <hr>
+        
+        <div id="navbar">
+            <a href="INTRO.html"><h5>INTRODUCTION</h5></a>
+            <a href="PRODUCTS.html"><h5>PRODUCTS AVAILABLE</h5></a>
+             <a href="CONTACTS.html"><h5>CONTACTS</h5></a>
+          </div><hr><br><br><br<br><br><br>
+          <br>
+        
+    <form name="f" float="center" class="b" >
+        <input type="text" name="product" required="required" class="c" onclick="alert('TYPE neem , tulsi , aloe vera')" onblur = "lowlight(this)" onfocus="highlight(this)">
+        <input type="submit" name="search" onclick="tranfer()" class="d" value="search">
+    </form>
+    <br>
+    <br>
+        
+    </body>
+</html>
