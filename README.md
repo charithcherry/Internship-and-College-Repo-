@@ -1,1 +1,1 @@
-# newpro
+# Internship related files
