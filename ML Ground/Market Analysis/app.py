@@ -91,7 +91,7 @@ def column_segregation():
     st.markdown("### Categorical columns :\n {} \n ### Categorical numerical columns :\n {}\n ###  numerical columns \n{}".format(df_cat.columns,cat_num,num))
 
 
-# FUNCTIONS BLOCK END
+#   FUNCTIONS BLOCK END
 
 if __name__=='__main__':
     try:
