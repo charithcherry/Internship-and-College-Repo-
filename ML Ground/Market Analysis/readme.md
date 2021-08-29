@@ -1,4 +1,4 @@
-# Customer Data
+# Market Segmentation 
 
 ## Market EDA : IPYNB
 1. Requirements:  Jupyter Notebook , python , numpy, pandas, seaborn, matplotlib 
