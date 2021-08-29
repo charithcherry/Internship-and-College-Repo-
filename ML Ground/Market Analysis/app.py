@@ -11,6 +11,7 @@ import plotly.graph_objects as go
 from plotly.offline import download_plotlyjs, init_notebook_mode, iplot
 from plotly.graph_objs import *
 from seaborn import categorical
+from seaborn.distributions import kdeplot
 import streamlit as st
 
 
@@ -159,8 +160,8 @@ if __name__=='__main__':
     try:
         if not data.empty:
                         st.sidebar.title("Visualizations")
-                        # General countplot for numeric data
-                        st.sidebar.markdown("### General Countplots for Categorical columns")
+                        # General countplot/Pie Chart for Categorical data
+                        st.sidebar.markdown("### General Countplots and Pie chart for Categorical columns")
                         if not st.sidebar.checkbox("Hide", True,key="A"):
                             selectplot=st.sidebar.selectbox("Type of plot ",['Bar plot','Pie Chart'],key="B")
                             select=st.sidebar.selectbox("Visualization based on ",categorical_col,key="C")
@@ -173,9 +174,96 @@ if __name__=='__main__':
                                 col_count = pd.DataFrame({select:col_count.index, 'Number of Customers':col_count.values})
                                 fig = px.pie(col_count, values='Number of Customers', names=select)
                                 st.plotly_chart(fig)
+                        
+                        # Histogram for numeric data
+                        st.sidebar.markdown("### Histogram for Numeric columns")
+                        if not st.sidebar.checkbox("Hide", True,key="D"):
+                            select=st.sidebar.selectbox("Visualization based on ",numerical_col,key="E")
+                            st.markdown("### histogram for Numeric Data")
+                            fig=px.histogram(data, x=select)
+                            st.plotly_chart(fig)
+
+
+                        # Boxplots for Numeric Data
+                        st.sidebar.markdown("### Boxplot for Numeric columns")
+                        if not st.sidebar.checkbox("Hide", True,key="F"):
+                            select=st.sidebar.selectbox("Visualization based on ",numericdata.columns,key="G")
+                            st.markdown("### boxplots for Numeric Data")
+                            fig=px.box(numericdata, y=select)
+                            st.plotly_chart(fig)
+                        
+                        # Bivaritae scatterplot for Numeric Data
+                        st.sidebar.markdown("### Scatterplot for Numeric columns")
+                        if not st.sidebar.checkbox("Hide", True,key="H"):
+                            select1=st.sidebar.selectbox("Feature X ",numerical_col,key="I")
+                            select2=st.sidebar.selectbox("Feature Y ",numerical_col,key="J")
+                            st.markdown("### Scatterplot for Numeric Data")
+                            fig=px.scatter(numericdata,x=select1, y=select2)
+                            st.plotly_chart(fig)
+
+                        # Bivaritae jointplot for Numeric Data
+                        st.sidebar.markdown("### Jointplot for Numeric columns")
+                        if not st.sidebar.checkbox("Hide", True,key="K"):
+                            select1=st.sidebar.selectbox("Feature X ",numerical_col,key="L")
+                            select2=st.sidebar.selectbox("Feature Y ",numerical_col,key="M")
+                            st.markdown("### Jointplot for Numeric Data")
+                            fig=px.scatter(numericdata,x=select1, y=select2, marginal_x="histogram", marginal_y="rug")
+                            st.plotly_chart(fig)
+
+                        # Bivaritae barplot for Numeric Data
+                        st.sidebar.markdown("### Barplot for Numeric columns")
+                        if not st.sidebar.checkbox("Hide", True,key="N"):
+                            select1=st.sidebar.selectbox("Feature X ",categorical_col,key="P")
+                            select2=st.sidebar.selectbox("Feature Y ",['Income','Recency'],key="O")
+                            st.markdown("### Barplot for Numeric Data")
+                            ax = plt.figure()
+                            sns.barplot(x=data[select1],y=data[select2])
+                            st.write(ax)
+                        st.sidebar.markdown("### -----------------------------------------")    
+                      
+    except:
+        Exceptionblock()
+
+    #DATA VISUALIZATION SEC END
+
+
+    
+    # DATA VISUALIZATIONS BASED ON OBSERVATIONS
+    try:
+        if not data.empty:
+                st.sidebar.title("Visualizations Based on Observations")
+                st.sidebar.markdown("### Barplot for Products")
+                if not st.sidebar.checkbox("Hide", True,key="Q"):
+                    Products = [col for col in data.columns if 'Mnt' in col]
+                    Products_total = []
+                    for i in range(0,6):
+                        Products_total.append(data[Products[i]].sum(axis=0))
+                    st.markdown("### Barplot for Products")
+                    ax = plt.figure()
+                    sns.barplot(x=Products_total, y=Products)
+                    st.write(ax)
+
+                st.sidebar.markdown("### Barplot for Purchases")
+                if not st.sidebar.checkbox("Hide", True,key="R"):
+                    Purchases = ['NumDealsPurchases', 'NumWebPurchases', 'NumCatalogPurchases', 'NumStorePurchases']
+                    Purchases_total = []
+                    for i in range(0,4):
+                        Purchases_total.append(data[Purchases[i]].sum(axis=0))
+                    ax = plt.figure()
+                    st.markdown("### Barplot for Purchases")
+                    sns.barplot(x=Purchases_total, y=Purchases)
+                    st.write(ax)
+
+                st.sidebar.markdown("### Customer Segregation Based on Age")
+                if not st.sidebar.checkbox("Hide", True,key="S"):
+                    data["Age"] = pd.datetime.today().year - data["Year_Birth"]
+                    data["Age_category"] = data['Age'].apply(lambda x: 'Senior Citizen' if x >= 60 else 'Adult' if x > 28 else 'Youth')
+                    st.markdown("###  Customer Segregation Based on Age")
+                    fig=px.histogram(data, x="Age_category")
+                    st.plotly_chart(fig)    
 
 
     except:
-        Exceptionblock()
+        Exceptionblock()    
         
 
