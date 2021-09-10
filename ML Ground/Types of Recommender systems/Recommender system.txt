@@ -1,0 +1,71 @@
+Types of Recommender System 
+
+1) Collaborative Recommender System    //
+2) Content Based System                 //
+3) Demographic based Recommender System   //
+4) Utility based Recommender System  //
+5) Knowledge based Recommender System   //
+6) Hybrid Recommender System  //
+7) Meta data based recommender system //
+8) Model based recommender system  //
+9) Popularity based recommender system //
+
+
+
+References:
+https://towardsdatascience.com/brief-on-recommender-systems-b86a1068a4dd
+https://blog.cambridgespark.com/nowadays-recommender-systems-are-used-to-personalize-your-experience-on-the-web-telling-you-what-120f39b89c3c
+https://towardsdatascience.com/3-approaches-to-build-a-recommendation-system-ce6a7a404576
+https://github.com/YuzhouPeng/Linedin-User-profile-Hybrid-Recommendation
+https://github.com/vjvishaljha/Recommender_Sys
+https://github.com/charithcherry/Innomatics_Internship_APR_21/tree/main/Recommender%20System
+https://paperswithcode.com/task/recommendation-systems
+https://ilmoirfan.com/developing-knowledge-based-recommender-system/
+https://github.com/Invince11/IMBD-Movie-Recommendation-System
+
+
+
+Final notebook:
+https://colab.research.google.com/drive/1C3sddSBESwJ7PKi1qm3U6P7aGqJLb7nV?usp=sharing
+
+
+1) popularity based recommender system
+data : UserId	ProductId	Rating
+input : none
+
+2) Utility based recommender system:
+data : UserId	ProductId	Rating
+input : ProductID
+
+3) Item item based recommender system
+data : product_uid	product_description
+input : product
+
+4) content based recommender system
+data: ['keywords','cast','genres','director'] => into combined feature 
+input :movie
+
+5) knowledge based recommender system
+data : original_title	runtime	vote_average	vote_count	year	genre
+input : 
+input preferred genre
+input shortest duration
+input lonest duration
+input earliest year
+input latest year
+
+6) Demographic filtering (based on commonality of users)
+data : original_title	popularity	vote_count	vote_average	(imdb_score)=>calculated
+input : number of recommendations
+
+7) meta data based recommender system
+data :cast	keywords	director	genres  =>into combined feature
+input : name, number of recommendations
+
+8) Hybrid recommender system using lightfm 
+data : user_id	book_id	rating
+input : model, user_book_interaction, user_id,user_dict, item_dict
+
+9) model based recommender system
+data : userId	movieId	rating	title	genres
+input : predictions, movies_df = movies(df), userId = UID, ratings_df = ratings(df)
