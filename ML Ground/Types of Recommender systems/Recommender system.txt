@@ -22,7 +22,7 @@ https://github.com/charithcherry/Innomatics_Internship_APR_21/tree/main/Recommen
 https://paperswithcode.com/task/recommendation-systems
 https://ilmoirfan.com/developing-knowledge-based-recommender-system/
 https://github.com/Invince11/IMBD-Movie-Recommendation-System
-
+https://towardsdatascience.com/pytorch-bentoml-heroku-the-simple-stack-65196aad181c
 
 
 Final notebook:
