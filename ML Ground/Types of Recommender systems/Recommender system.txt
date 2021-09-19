@@ -69,3 +69,30 @@ input : model, user_book_interaction, user_id,user_dict, item_dict
 9) model based recommender system
 data : userId	movieId	rating	title	genres
 input : predictions, movies_df = movies(df), userId = UID, ratings_df = ratings(df)
+
+
+
+
+
+
+Product Recommender system:
+
+UserId , ProductId, Rating , product_description, Product_name, vote, popularity   ,  year , raw_material, usage, company, life , vote_avg
+
+
+Movie Recommender system:
+
+
+UserId, MOvieId,   rating,  keyword, original_title,       vote_count,  popularity,   year , cast , genres, director, runtime ,   vote_avg, 
+
+
+
+
+
+
+
+
+
+
+
+
