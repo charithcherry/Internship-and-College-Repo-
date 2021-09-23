@@ -7,5 +7,5 @@
 #### 1) BentoML
 #### 2) Market Analysis
 #### 3) Multi Class classification
-#### 4) Recommender System
+#### 4) Product Recommender System
 #### 5) Types of Recommender systems with serving using BentoML
