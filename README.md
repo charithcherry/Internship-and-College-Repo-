@@ -4,6 +4,8 @@
 ## Internship
 ### Machine Learning Ground 
 
-#### BentoML
-#### Market Analysis
-#### 
+#### 1) BentoML
+#### 2) Market Analysis
+#### 3) Multi Class classification
+#### 4) Recommender System
+#### 5) Types of Recommender systems with serving using BentoML
