@@ -1,7 +1,7 @@
 # General Files and Internship Related Projects
 
 
-## Internship
+## Internships
 ### Machine Learning Ground - DONE
 #### 1) BentoML
 #### 2) Market Analysis
