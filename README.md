@@ -13,4 +13,4 @@
 #### 6) Deep Learning Model to classify person’s actions while driving
 
 
-### Final Report : link (https://github.com/charithcherry/Internship-and-College-Repo-/blob/master/ML%20Ground/FINAL%20REPORT%20Intern.pdf)
+### Final Report : [link](https://github.com/charithcherry/Internship-and-College-Repo-/blob/master/ML%20Ground/FINAL%20REPORT%20Intern.pdf)
